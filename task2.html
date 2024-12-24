@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Email Template</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+        .email-container:hover {
+            transform: scale(1.02);
+        }
+        .header {
+            background: linear-gradient(45deg, #ff69b4, #8a2be2);
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 16px;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content h2 {
+            font-size: 24px;
+            color: #8a2be2;
+            margin-bottom: 10px;
+        }
+        .content p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .content img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button {
+            display: inline-block;
+            background: #8a2be2;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #6a1bb1;
+        }
+        .footer {
+            text-align: center;
+            background: #f4f4f9;
+            color: #888;
+            padding: 15px;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .content h2 {
+                font-size: 20px;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+    </style>
+    <script>
+        function showAlert() {
+            alert('Thank you for taking action! We appreciate your enthusiasm.');
+        }
+    </script>
+</head>
+<body>
+    <div class="email-container fade-in">
+        <div class="header">
+            <h1>Welcome to Our World!</h1>
+            <p>Discover limitless possibilities with us.</p>
+        </div>
+        <div class="content">
+            <img src="https://media.beehiiv.com/cdn-cgi/image/fit%3Dscale-down,format%3Dauto,onerror%3Dredirect,quality%3D80/uploads/asset/file/4b9aa37b-c52e-4b10-aebe-79980182e5e7/image26.png?t%3D1714754390&imgrefurl.com/600x300" alt="Welcome Image">
+            <h2>Why Choose Us?</h2>
+            <p>
+                We bring you the best features to enhance your experience. From innovative solutions to top-notch support, we are here to make your journey remarkable.
+            </p>
+            <p>
+                Take the next step and explore all we have to offer.
+            </p>
+            <a href="#" class="cta-button" onclick="showAlert()">Get Started Now</a>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+            <p><a href="#" style="color: #8a2be2; text-decoration: none;">Unsubscribe</a> | <a href="#" style="color: #8a2be2; text-decoration: none;">Contact Us</a></p>
+        </div>
+    </div>
+</body>
+</html>

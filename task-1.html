@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile App Signup Flow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .info {
+      font-size: 14px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #555;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    input {
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: border-color 0.3s;
+    }
+    input:focus {
+      border-color: #2575fc;
+      outline: none;
+      box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: linear-gradient(to right, #2575fc, #6a11cb);
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Signup Flow</h1>
+    <p class="info">Please fill out the form below to create an account. Make sure the details are correct.</p>
+    <form id="signupForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+      <span class="error" id="nameError"></span>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <span class="error" id="emailError"></span>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <span class="error" id="passwordError"></span>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+      <span class="error" id="confirmPasswordError"></span>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="success" id="successMessage"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('signupForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      
+      nameError.textContent = '';
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      confirmPasswordError.textContent = '';
+
+      let isValid = true;
+
+      
+      if (nameInput.value.trim() === '') {
+        nameError.textContent = 'Name is required';
+        isValid = false;
+      }
+
+  
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailInput.value)) {
+        emailError.textContent = 'Enter a valid email';
+        isValid = false;
+      }
+
+    
+      if (passwordInput.value.length < 6) {
+        passwordError.textContent = 'Password must be at least 6 characters';
+        isValid = false;
+      }
+
+      
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        confirmPasswordError.textContent = 'Passwords do not match';
+        isValid = false;
+      }
+
+      if (isValid) {
+        successMessage.textContent = 'Signup successful!';
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>

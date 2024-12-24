@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gourmet Haven</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #f4faff, #d1e7ff);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #1e90ff, #87cefa);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+            gap: 15px;
+        }
+        .menu-category {
+            background: linear-gradient(90deg, #ffffff, #e6f7ff);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+        }
+        .menu-category h3 {
+            background: linear-gradient(90deg, #1e90ff, #4682b4);
+            color: white;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        .menu-items {
+            padding: 15px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .menu-item:last-child {
+            margin-bottom: 0;
+        }
+        .menu-item span {
+            font-weight: bold;
+        }
+        .menu-item button {
+            background: linear-gradient(90deg, #4682b4, #1e90ff);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .menu-item button:hover {
+            background: linear-gradient(90deg, #005f99, #1e90ff);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: linear-gradient(90deg, #1e90ff, #87cefa);
+            color: white;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to The Gourmet Haven</h1>
+        <p>Delicious meals for every taste</p>
+    </header>
+    <div class="menu">
+        <div class="menu-category">
+            <h3>Appetizers</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span>Spring Rolls</span>
+                    <button onclick="addToOrder('Spring Rolls')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <span>Garlic Bread</span>
+                    <button onclick="addToOrder('Garlic Bread')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <span>Stuffed Mushrooms</span>
+                    <button onclick="addToOrder('Stuffed Mushrooms')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>Main Course</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span>Grilled Salmon</span>
+                    <button onclick="addToOrder('Grilled Salmon')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <span>Chicken Alfredo</span>
+                    <button onclick="addToOrder('Chicken Alfredo')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <span>Vegetable Stir Fry</span>
+                    <button onclick="addToOrder('Vegetable Stir Fry')">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>Desserts</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <span>Cheesecake</span>
+                    <button onclick="addToOrder('Cheesecake')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <span>Chocolate Lava Cake</span>
+                    <button onclick="addToOrder('Chocolate Lava Cake')">Add</button>
+                </div>
+                <div class="menu-item">
+                    <span>Fruit Salad</span>
+                    <button onclick="addToOrder('Fruit Salad')">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Experience fine dining at <strong>The Gourmet Haven</strong></p>
+    </footer>
+    <script>
+        function addToOrder(item) {
+            alert(`${item} has been added to your order!`);
+        }
+    </script>
+</body>
+</html>
